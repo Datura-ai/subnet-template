@@ -87,7 +87,7 @@ The `btcli` tool is used to manage wallets and keys.
 1. **Create a Coldkey** (shared between miner and validator):
 
    ```bash
-   btcli new_coldkey --wallet.name mywallet
+   btcli w new_coldkey --wallet.name mywallet
    ```
 
 2. **Create Hotkeys**:
@@ -95,13 +95,13 @@ The `btcli` tool is used to manage wallets and keys.
    - **Miner Hotkey**:
 
      ```bash
-     btcli new_hotkey --wallet.name mywallet --wallet.hotkey miner_hotkey
+     btcli w new_hotkey --wallet.name mywallet --wallet.hotkey miner_hotkey
      ```
 
    - **Validator Hotkey**:
 
      ```bash
-     btcli new_hotkey --wallet.name mywallet --wallet.hotkey validator_hotkey
+     btcli w new_hotkey --wallet.name mywallet --wallet.hotkey validator_hotkey
      ```
 
 ### 4. Register Wallets
@@ -111,13 +111,13 @@ Register both the miner and validator on the Bittensor network.
 - **Register the Miner**:
 
   ```bash
-  btcli register --wallet.name mywallet --wallet.hotkey miner_hotkey --subtensor.network finney
+  btcli s register --wallet.name mywallet --wallet.hotkey miner_hotkey --subtensor.network finney
   ```
 
 - **Register the Validator**:
 
   ```bash
-  btcli register --wallet.name mywallet --wallet.hotkey validator_hotkey --subtensor.network finney
+  btcli s register --wallet.name mywallet --wallet.hotkey validator_hotkey --subtensor.network finney
   ```
 
 > **Note**: Replace `finney` with the name of the network you are connecting to if different.
@@ -131,7 +131,7 @@ Register both the miner and validator on the Bittensor network.
 In one terminal window, navigate to the project directory and run:
 
 ```bash
-python miner.py --wallet.name mywallet --wallet.hotkey miner_hotkey --subtensor.network finney
+python miner.py --wallet.name mywallet --wallet.hotkey miner_hotkey --subtensor.network finney --axon.port 8901
 ```
 
 **Arguments**:
