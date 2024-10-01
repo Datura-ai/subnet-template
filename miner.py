@@ -90,7 +90,7 @@ class Miner:
 
     def setup_axon(self):
         # Build and link miner functions to the axon.
-        self.axon = bt.axon(wallet=self.wallet, config=self.config)
+        self.axon = bt.axon(wallet=self.wallet, port=self.config.axon.port)
 
         # Attach functions to the axon.
         bt.logging.info(f"Attaching forward function to axon.")
